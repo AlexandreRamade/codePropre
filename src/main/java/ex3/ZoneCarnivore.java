@@ -2,25 +2,14 @@ package ex3;
 
 import java.util.List;
 
-public class ZoneCarnivore {
+public class ZoneCarnivore extends Zone {
 
-	private List<String> types;
-	private List<String> noms;
-	private List<String> comportements;
-	
-	public void addAnimal(String typeAnimal, String nomAnimal, String comportement) {
-		types.add(typeAnimal);
-		noms.add(nomAnimal);
-		comportements.add(comportement);
+	/** Masse moyenne en kg de nourriture consommé par 1 carnivore */
+	private static final double MASSE_NOURRITURE = 10;
+
+	public ZoneCarnivore(String nomZone) {
+		super(nomZone, MASSE_NOURRITURE);
 	}
+
 	
-	public void afficherListeAnimaux(){
-		for (String nom: noms){
-			System.out.println(nom);
-		}
-	}
-	
-	public double calculerKgsNourritureParJour(){
-		return noms.size() * 10;
-	}
 }
